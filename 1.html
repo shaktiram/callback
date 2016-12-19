@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>JQ</title>
+  <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      console.log('jQ is loaded!');
+
+        function testingCallbacks(number, callback){
+          $('#callback1').html('starting callback');
+
+          console.log('The passed number is '+ number);
+          callback(number);
+          console.log('callback finished running');
+      }
+
+  testingCallbacks(5, function(num){
+    console.log('in callback');
+    console.log('number you picked was '+num);
+
+    console.log('leaving callback');
+    $('#callback2').html('ending callback!');
+  });
+});
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="callback1">
+
+        </div>
+        <div id="callback2">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

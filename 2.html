@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>JQ 2</title>
+  <script>
+function DoProcess(a, b, doLater)
+{
+  alert("sum= "+[a+b].toString());
+  doLater(a,b);
+}
+
+function ShowDiff(p,q)
+{
+  alert("Diff: "+[p-q].toString());
+}
+
+function ShowMultiply(p,q)
+{
+  alert("Product: "+[p*q].toString());
+}
+
+  </script>
+</head>
+<body>
+  <input type="button" value="Show" onclick="DoProcess(10, 20, ShowDiff)" />
+  <input type="button" value="Another Show" onclick="DoProcess(30, 20, ShowMultiply)" />
+  <input type="button" value="Some Show" onclick="DoProcess(30, 20, function(p,q){ alert ('diff :' + (p-q).toString());})" />
+
+</body>
+</html>
